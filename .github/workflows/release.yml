@@ -1,0 +1,19 @@
+name: 'Announce release'
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  slack-notify:
+    name: Announce Release on Slack
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Send release notification to Slack
+        uses: ./
+        with:
+          slack-webhook-url: ${{ secrets.SLACK_RELEASES_WEBHOOK }}

@@ -1,0 +1,23 @@
+{
+  "release": {
+    "tag_name": "v1.0.0",
+    "name": "Test Release",
+    "body": "## Changes\n\n- chore: project init @titenkov\n",
+    "html_url": "https://github.com/titenkov/action-release/releases/tag/v1.0.0",
+    "prerelease": false,
+    "draft": false,
+    "author": {
+      "login": "titenkov",
+      "html_url": "https://github.com/titenkov",
+      "avatar_url": "https://avatars.githubusercontent.com/titenkov"
+    }
+  },
+  "repository": {
+    "name": "action-release",
+    "full_name": "titenkov/action-release",
+    "html_url": "https://github.com/titenkov/action-release",
+    "owner": {
+      "login": "titenkov"
+    }
+  }
+}

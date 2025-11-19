@@ -1,0 +1,33 @@
+name: 'Release Announcer'
+description: 'Automatically announce GitHub releases to Slack with beautifully formatted markdown'
+author: 'Pavel Titenkov'
+branding:
+  icon: 'bell'
+  color: 'blue'
+
+inputs:
+  slack-webhook-url:
+    description: 'Slack webhook URL for notifications'
+    required: true
+  slack-title:
+    description: 'Custom notification text (appears above the attachment)'
+    required: false
+  slack-channel:
+    description: 'Slack channel (overrides webhook default)'
+    required: false
+  slack-username:
+    description: 'Bot username for Slack message'
+    required: false
+    default: 'Release Bot'
+  slack-icon-emoji:
+    description: 'Emoji icon for bot'
+    required: false
+    default: ':rocket:'
+
+outputs:
+  slack-message:
+    description: 'The formatted Slack message that was sent'
+
+runs:
+  using: 'node20'
+  main: 'index.js'
