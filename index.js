@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const slackifyMarkdown = require('slackify-markdown');
+const slackifyMarkdown = require('./lib/slackify');
 
 /**
  * Convert GitHub markdown to Slack mrkdwn format
@@ -64,11 +64,11 @@ function buildSlackPayload(inputs) {
 
   // Convert markdown to Slack format
   const formattedBody = convertToSlackMarkdown(releaseBody || 'No release notes provided.');
-  
+
   // Build message text
   const repoLink = `<${repositoryUrl}|${repositoryName}>`;
   const releaseLink = `<${releaseUrl}|${releaseTag}>`;
-  
+
   const text = `\n${repoLink}\n\n*Release ${releaseLink} is published!*\n\n${formattedBody}`;
 
   // Build payload with attachments (for colored bar and author avatar)
